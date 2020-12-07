@@ -1,0 +1,50 @@
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.btn {
+  padding: 10px;
+  margin-top: 15px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+.fluid {
+  position: absolute;
+  background: rgba(220, 220, 220, .8);
+  width: 40vh;
+  height: 40vh;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: fluid 6s ease-in-out infinite both alternate;
+  z-index: -1;
+}
+
+@keyframes fluid {
+  0% {border-radius: 40% 70% 70% 50% / 60% 40% 70% 50%; transform: rotate(0deg)}
+  100% {border-radius: 40% 60%; transform: rotate(180deg)} 
+}
