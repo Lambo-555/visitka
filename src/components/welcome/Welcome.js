@@ -7,8 +7,10 @@ import langRu from "../../languages/ru"
 import langEn from "../../languages/en"
 //Themes
 import { themeDark, themeLight } from "../commonStyles/themes"
+import { useHistory } from "react-router-dom";
 
 const Welcome = (props) => {
+  let history = useHistory()
   const [posY, setPosY] = useState(0)
   const [posX, setPosX] = useState(0)
   const [lang, setLang] = useState({})
@@ -17,8 +19,9 @@ const Welcome = (props) => {
   useEffect(() => {
     props.settings.currentLang === 'en' ? setLang(langEn) : setLang(langRu)
     props.settings.currentTheme === 'light' ? setTheme(themeLight) : setTheme(themeDark)
+
     return () => {
-      console.log('React welcome component was changed')
+      console.log('componentDidUnmount')
     }
   }, [props.settings])
 
@@ -39,6 +42,9 @@ const Welcome = (props) => {
   }
   const buttonStyle = {
     boxShadow: `${posX * 0.5}px ${posY * 0.5}px 5px rgba(0, 0, 0, 0.2)`
+  }
+  const redirectHandler = (path) => {
+    history.push(path)
   }
   return (
     <div className={styles.container} style={theme} onMouseMove={animate}>
@@ -65,9 +71,9 @@ const Welcome = (props) => {
           <small>{lang.hello_from}</small>
           <h3>{lang.about}</h3>
           <div className={styles.menu}>
-            <button style={buttonStyle}>{lang.btn_challenges}</button>
-            <button style={buttonStyle}>{lang.btn_exp}</button>
-            <button style={buttonStyle}>{lang.btn_contacts}</button>
+            <button style={buttonStyle} onClick={() => redirectHandler('/challenges')}>{lang.btn_challenges}</button>
+            <button style={buttonStyle} onClick={() => redirectHandler('/experience')}>{lang.btn_exp}</button>
+            <button style={buttonStyle} onClick={() => redirectHandler('/contacts')}>{lang.btn_contacts}</button>
           </div>
         </div>
       </div>
@@ -75,12 +81,15 @@ const Welcome = (props) => {
   )
 }
 
+
+//react-redux
+//get data
 function mapStateToProps(state) {
   return {
     settings: state.settingsReducer
   }
 }
-
+//set data
 function mapDispatchToProps(dispatch) {
   return {
     onLangChange: (newLang) => dispatch(settingsSetLanguage(newLang)),

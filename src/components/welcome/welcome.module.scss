@@ -13,10 +13,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .card {
-  transform-style: preserve-3d;
+  transform-style: preserve-3d; 
   border-radius: 15px;
   background: white;
   padding: 0rem 5rem;
