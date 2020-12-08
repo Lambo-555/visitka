@@ -7,12 +7,12 @@ import {
 import Welcome from './components/welcome/Welcome'
 import About from './components/about/About'
 import Menu from './components/Menu'
+import styles from "./components/commonStyles/main.module.scss"
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Menu/>
+    <div >
+      <Router>
         <Switch>
           <Route path="/about">
             <About />
@@ -21,8 +21,8 @@ function App() {
             <Welcome />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
