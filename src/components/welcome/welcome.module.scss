@@ -15,13 +15,10 @@ body {
   align-items: center;
 }
 
-.animate {
-  transition: all 0.75s ease-out;
-}
-
 .card {
   transform-style: preserve-3d;
   border-radius: 15px;
+  background: white;
   padding: 0rem 5rem;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
   border: 1px solid lightblue;
@@ -33,17 +30,50 @@ body {
   align-items: center;
   justify-content: center;
   img {
-    width: 20rem;
+    animation: spinner 5s infinite linear;
+    width: 12rem;
     z-index: 2;
-    transform: translateZ(35px);
-    transition: all 0.75s ease-out;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg) translateZ(4px);
+  }
+  100% {
+    transform: rotate(360deg) translateZ(5px);
+  }
+}
+
+.language {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 15px;
+  border-radius: 7px;
+  border: none;
+  font-size: 20px;
+  &:hover{
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+.theme {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 15px;
+  border-radius: 7px;
+  border: none;
+  font-size: 20px;
+  &:hover{
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
 .circle {
   width: 15rem;
   height: 15rem;
-  background: linear-gradient(to right, rgba(245, 70, 66, 0.75), rgba(8, 83, 156, 0.75));
+  background: linear-gradient(to right, #3f5efb 0%, #ff8c00 100%);
   position: absolute;
   border-radius: 50%;
   z-index: 1;
@@ -52,6 +82,12 @@ body {
 .about {
   h1 {
     font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
   }
   h3 {
     font-size: 1.3rem;
@@ -66,9 +102,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.75s ease-out;
   margin-bottom: 5rem;
   button {
+    transition: color, background-color 0.15s ease-out;
     border: 1px solid lightblue;
     transform: translateZ(15px);
     text-transform: uppercase;
@@ -84,7 +120,12 @@ body {
       margin-top: 0rem;
     }
     &:hover {
-      background: #585858;
+      background: #ff8c00;
+      color: white;
+    }
+    &:focus {
+      outline: 0;
+      background: #3f5efb;
       color: white;
     }
   }

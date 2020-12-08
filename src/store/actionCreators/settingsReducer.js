@@ -13,3 +13,24 @@ export function settingsSetTheme(theme) {
       payload: theme
   };
 }
+
+/*
+export function timerAdd(number) {
+  return {
+    type: TIMER_ADD,
+    payload: number
+  }
+}
+
+
+export function timerAddAsync(number) {
+  return (dispatch) => {
+    let timerId = setInterval(() => {
+      dispatch(timerAdd(number))
+    }, 550)
+    setTimeout(() => {
+      clearInterval(timerId)
+    }, 5500)
+  };
+}
+*/

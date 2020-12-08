@@ -4,7 +4,7 @@ const initialState = {
   currentLang: 'en',
   currentTheme: 'light',
   languages: ['ru', 'en'],
-  themes: ['light', 'dark', 'colored'],
+  themes: ['light', 'dark'],
 };
 
 export default function counterReducer(state = initialState, action) {
