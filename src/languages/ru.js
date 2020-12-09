@@ -7,6 +7,26 @@ const library = {
   "btn_exp": "Опыт работы",
   "about2":"Этот сайт построен на React, Redux, Router, SCSS Modules, Mongoose",
   "buttonSubmit":"Отправить",
+  "button_back": "Назад",
+  "challenge_name": "Название",
+  "challenge_role": "Роль",
+  "challenge_place": "Место",
+  "contacts_header": "Контакты",
+
+  "exp_header1": "Опыт работы",
+  "exp_p1": "Я работал 1.5 года в качестве менеджера в банке МНД. Там я выполнял самые разнообразные задачи, среди которых были поручения, связанные с IT.",
+  "exp_li_001": "Верстка страниц, правка содержимого",
+  "exp_li_002": "Дополнение сайта, UI",
+  "exp_li_003": "Разработка простых ботов для ВК (FAQ)",
+  "exp_li_004": "Администрирование групп, VK API",
+  "exp_li_005": "И иные задачи",
+  "exp_header2": "Курсы",
+  "exp_p2": "Я целенаправленно стремился в IT сферу и до сих пор иду по намеченному плану. Я изучаю следующие технологии",
+  "exp_li_201":"React + Redux + Router / Vue",
+  "exp_li_202":"Node + express / PHP + Laravel",
+  "exp_li_203":"MongoDB(Mongoose) / MySQL",
+  "exp_li_204":"SASS",
+  "exp_li_205":"И другие технологии",
 }
 
 export default library

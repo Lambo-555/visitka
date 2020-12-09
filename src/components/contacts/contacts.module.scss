@@ -1,0 +1,36 @@
+.back {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  align-self: center;
+  border-radius: 15px;
+  h1 {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 0.8rem 2rem;
+    background: white;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.25s ease-in-out;
+    &:hover {
+      background: #3f5efb;
+      color: white;
+    }
+  }
+}

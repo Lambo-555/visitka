@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import styles from './challenges.module.scss'
+import langEn from '../../languages/en'
+import langRu from '../../languages/ru'
 import { themeDark, themeLight } from "../commonStyles/themes"
 
 const Challenges = props => {
@@ -9,13 +11,14 @@ const Challenges = props => {
   const [posY, setPosY] = useState(0)
   const [posX, setPosX] = useState(0)
   const [theme, setTheme] = useState({})
+  const [lang, setLang] = useState({})
   const [challenges, setChallenges] = useState([])
 
   useEffect(() => {
     setChallenges(props.data.challenges)
     setTheme(props.settings.currentTheme === 'dark' ? themeDark : themeLight)
+    setLang(props.settings.currentLang === 'en' ? langEn : langRu)
     return () => {
-      console.log('componentDidUnmount')
     }
   }, [props.data, props.settings])
 
@@ -40,9 +43,9 @@ const Challenges = props => {
       <table className={styles.table} style={tableStyle}>
         <thead>
           <tr style={headStyle}>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Place</th>
+            <th>{lang.challenge_name}</th>
+            <th>{lang.challenge_role}</th>
+            <th>{lang.challenge_place}</th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +65,7 @@ const Challenges = props => {
             onClick={() => { history.goBack() }}
             className={styles.button}
             style={buttonStyle}
-          ><td>Back</td></tr>
+          ><td>{lang.button_back}</td></tr>
         </tbody>
       </table>
     </div>

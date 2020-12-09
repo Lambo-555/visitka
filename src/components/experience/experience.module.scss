@@ -14,21 +14,21 @@
     border-radius: 15px;
   }
   p {
-    background: black;
+    background: #3f5efb;
     color: white;
     padding: 10px;
     border-radius: 15px;
   }
   button {
     width: 100%;
-    padding: 15px;
+    padding: 0.8rem 2rem;
     background: white;
     border-radius: 15px;
     margin-top: 20px;
     font-size: 18px;
     transition: background-color 0.25s ease-in-out;
     &:hover{
-      background: rgba(0, 0, 0, 0.2);
+      background: #3f5efb;
       color: white;
     }
   }
@@ -44,8 +44,10 @@
 }
 .fluid {
   position: absolute;
-  height: 94%;
-  width: 94%;
-  background-color: rgba(0, 0, 0, 0.2);
+  height: 50%;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  background-color: rgba(63, 94, 251, 0.3);
   z-index: -1;
 }
