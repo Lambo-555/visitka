@@ -1,0 +1,17 @@
+.button {
+  background: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 5px red;
+  padding: 10px 30px;
+  font-weight: bold;
+  &:focus {
+    outline: 0;
+    background-color: #3f5efb;
+    border: inset 1px solid black;
+  }
+  &:hover {
+    background-color: #ff8c00;
+    color: white;
+  }
+}
